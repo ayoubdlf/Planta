@@ -1,29 +1,33 @@
 package planta;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-
+import java.io.IOException;
 
 public class Main extends Application {
 
     @Override
-    public void start(Stage stage) {
-        BorderPane root = new BorderPane();
+    public void start(Stage primaryStage) {
+        try {
+            // Chargement de la vue principale
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/cataloguePlantes.fxml"));
+            Parent root = loader.load();
 
-        root.setCenter(new Label("Planta"));
+            Scene scene = new Scene(root, 800, 600);
+            primaryStage.setTitle("Catalogue de Plantes 🌿");
+            primaryStage.setScene(scene);
+            primaryStage.show();
 
-        stage.setTitle("Planta");
-        stage.setScene(new Scene(root, 428, 800));
-        stage.setResizable(false);
-        stage.show();
+            scene.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
-
 }
