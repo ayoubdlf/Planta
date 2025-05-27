@@ -5,45 +5,68 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox fx:id="racine" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="926.0" prefWidth="428.0" style="-fx-background-color: white; -fx-padding: 16; -fx-spacing: 16;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="planta.controle.ControleCataloguePlantes">
 
-      <VBox alignment="CENTER_LEFT" style="-fx-background-color: white;">
-
-            <Label text="Bonjour">
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="planta.controle.ControleCataloguePlantes">
+   <center>
+      <VBox fx:id="racine" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="926.0" prefWidth="428.0" style="-fx-background-color: white; -fx-padding: 16; -fx-spacing: 16;">
+      
+            <VBox alignment="CENTER_LEFT" style="-fx-background-color: white;">
+      
+                  <Label text="Bonjour">
+                     <font>
+                        <Font name="Inter Regular" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label text="Prenez soin de vos plantes !" textFill="#6b7280">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+      
+            </VBox>
+            <TextField fx:id="recherche" maxHeight="32.0" minHeight="32.0" prefHeight="32.0" promptText="Rechercher" styleClass="recherche">
                <font>
-                  <Font name="Inter Regular" size="20.0" />
+                  <Font name="Inter Regular" size="14.0" />
                </font>
-            </Label>
-            <Label text="Prenez soin de vos plantes !" textFill="#6b7280">
-               <font>
-                  <Font size="12.0" />
-               </font>
-            </Label>
-
-      </VBox>
-      <TextField fx:id="recherche" promptText="Rechercher" styleClass="recherche" minHeight="32.0" maxHeight="32.0" prefHeight="32.0">
-         <font>
-            <Font name="Inter Regular" size="14.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </TextField>
-      <HBox alignment="CENTER" minHeight="32.0" style="-fx-spacing: 2; -fx-padding: 3; -fx-background-color: F3F4F6; -fx-background-radius: 8; -fx-border-radius: 8;">
-
-            <ToggleButton fx:id="filtrerParTout"      maxWidth="1.7976931348623157E308" layoutX="258.0" layoutY="12.0" mnemonicParsing="false" prefHeight="28.0" text="Tout"      textAlignment="CENTER" HBox.hgrow="ALWAYS"  />
-            <ToggleButton fx:id="filtrerParExterieur" maxWidth="1.7976931348623157E308" layoutX="258.0" layoutY="12.0" mnemonicParsing="false" prefHeight="28.0" text="Extérieur" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
-            <ToggleButton fx:id="filtrerParInterieur" maxWidth="1.7976931348623157E308" layoutX="261.0" layoutY="12.0" mnemonicParsing="false" prefHeight="28.0" text="Intérieur" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
-
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </HBox>
-      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: white;" VBox.vgrow="NEVER">
-
-            <FlowPane fx:id="listePlantes" columnHalignment="CENTER" style="-fx-background-color: white; -fx-hgap: 16; -fx-vgap: 16;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <HBox alignment="CENTER" minHeight="32.0" style="-fx-spacing: 2; -fx-padding: 3; -fx-background-color: F3F4F6; -fx-background-radius: 8; -fx-border-radius: 8;">
+      
+                  <ToggleButton fx:id="filtrerParTout" layoutX="258.0" layoutY="12.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="28.0" text="Tout" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+                  <ToggleButton fx:id="filtrerParExterieur" layoutX="258.0" layoutY="12.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="28.0" text="Extérieur" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+                  <ToggleButton fx:id="filtrerParInterieur" layoutX="261.0" layoutY="12.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="28.0" text="Intérieur" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+      
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: white;" VBox.vgrow="NEVER">
+      
+                  <FlowPane fx:id="listePlantes" columnHalignment="CENTER" style="-fx-background-color: white; -fx-hgap: 16; -fx-vgap: 16;">
             </FlowPane>
-
-      </ScrollPane>
-
-</VBox>
+      
+            </ScrollPane>
+      
+      </VBox>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Fichier">
+            <items>
+                  <MenuItem mnemonicParsing="false" text="Charger" />
+                  <MenuItem mnemonicParsing="false" text="Sauvegarder" />
+              <MenuItem mnemonicParsing="false" text="Fermer" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edition">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Ajouter" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

@@ -31,8 +31,6 @@ public class Plante {
         assert temperature[0] <= temperature[1]               : "La température minimale doit être inférieure ou égale à la maximale";
         assert humidite[0]    <= humidite[1]                  : "L'humidité minimale doit être inférieure ou égale à la maximale";
 
-
-
         this.nom         = nom;
         this.type        = type;
         this.description = description;
@@ -44,6 +42,8 @@ public class Plante {
         this.prix        = prix;
         this.image       = image;
     }
+
+    public Plante() {}
 
     /* ——————————  GETTERS  —————————— */
 
@@ -87,8 +87,60 @@ public class Plante {
         return this.image;
     }
 
+
+    /* ——————————  SETTERS  —————————— */
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setType(TypePlante type) {
+        this.type = type;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setEau(int eau) {
+        this.eau = eau;
+    }
+
+    public void setTemperature(int[] temperature) {
+        this.temperature = temperature;
+    }
+
+    public void setEstToxique(boolean toxique) {
+        this.toxique = toxique;
+    }
+
+    public void setOrigine(String origine) {
+        this.origine = origine;
+    }
+
+    public void setHumidite(int[] humidite) {
+        this.humidite = humidite;
+    }
+
+    public void setPrix(double prix) {
+        this.prix = prix;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     @Override
     public String toString() {
-        return this.getNom();
+        return "{ nom: \"" + this.nom + "\", "
+                + "type: \"" + this.type + "\", "
+                + "description: \"" + this.description + "\", "
+                + "eau: " + this.eau + ", "
+                + "temperature: [" + this.temperature[0] + ", " + this.temperature[1] + "], "
+                + "humidite: [" + this.humidite[0] + ", " + this.humidite[1] + "], "
+                + "toxique: " + this.toxique + ", "
+                + "origine: \"" + this.origine + "\", "
+                + "prix: " + this.prix + ", "
+                + "image: \"" + this.image + "\" }";
     }
 }
