@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import planta.modele.Plante;
 import java.io.IOException;
+import java.util.List;
 
 
 public class ControlePlante {
@@ -22,7 +23,9 @@ public class ControlePlante {
     @FXML private Label      humidite;
     // TODO: @FXML private Label prix;
 
-    private Plante plante;
+    private Plante       plante;
+    private List<Plante> catalogue;
+    private int          index;
 
     /**
      * Injecte la plante à afficher et met à jour la vue.
@@ -32,7 +35,14 @@ public class ControlePlante {
         this.afficherPlante();
     }
 
+    public void setCatalogue(List<Plante> catalogue, int index) {
+        this.catalogue = catalogue;
+        this.index     = index;
+        this.setPlante(catalogue.get(index));
+    }
+
     private void afficherPlante() {
+        this.racine.setVvalue(0);
         this.nom.setText(this.plante.getNom());
         this.type.setText(this.plante.getType().name().toLowerCase());
         this.description.setText(this.plante.getDescription());
@@ -48,5 +58,21 @@ public class ControlePlante {
         Parent     root   = loader.load();
 
         this.racine.getScene().setRoot(root);
+    }
+
+    @FXML
+    public void onPrecedent() {
+        if (catalogue != null && index > 0) {
+            index--;
+            setPlante(catalogue.get(index));
+        }
+    }
+
+    @FXML
+    public void onProchain() {
+        if (catalogue != null && index < catalogue.size() - 1) {
+            index++;
+            setPlante(catalogue.get(index));
+        }
     }
 }

@@ -13,7 +13,7 @@
          <children>
             <HBox alignment="CENTER" fillHeight="false" maxHeight="32.0" minHeight="32.0" prefHeight="32.0">
                <children>
-                  <Button alignment="CENTER" maxHeight="32.0" maxWidth="32.0" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" style="-fx-border-color: E5E7EB; -fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8;">
+                  <Button alignment="CENTER" maxHeight="32.0" maxWidth="32.0" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" onAction="#onPrecedent" prefHeight="32.0" prefWidth="32.0" style="-fx-border-color: E5E7EB; -fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8;">
                      <font>
                         <Font name="Inter Regular" size="14.0" />
                      </font>
@@ -37,7 +37,7 @@
                      </cursor>
                   </Button>
                   <Region layoutX="84.0" layoutY="10.0" HBox.hgrow="ALWAYS" />
-                  <Button alignment="CENTER" maxHeight="32.0" maxWidth="32.0" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" style="-fx-border-color: E5E7EB; -fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8;">
+                  <Button alignment="CENTER" maxHeight="32.0" maxWidth="32.0" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" onAction="#onProchain" prefHeight="32.0" prefWidth="32.0" style="-fx-border-color: E5E7EB; -fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8;">
                      <font>
                         <Font name="Inter Regular" size="14.0" />
                      </font>

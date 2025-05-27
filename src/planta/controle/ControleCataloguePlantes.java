@@ -18,15 +18,17 @@ public class ControleCataloguePlantes {
     @FXML private VBox     racine;
     @FXML private FlowPane listePlantes;
 
+    private ArrayList<Plante> plantes;
+
     /**
      * Initialise la liste et construit les cartes des plantes pour l'affichage.
      */
     @FXML
     public void initialize() {
-        ArrayList<Plante> plantes = new ArrayList<>();
+        this.plantes = new ArrayList<>();
 
         // Plantes par default
-        plantes.add(new Plante(
+        this.plantes.add(new Plante(
                 "Lys de la Paix",
                 TypePlante.EXTERIEUR,
                 "Une plante élégante, facile à entretenir...",
@@ -39,7 +41,7 @@ public class ControleCataloguePlantes {
                 true,
                 "https://images.unsplash.com/photo-1616694547693-b0f829a6cf30"
         ));
-        plantes.add(new Plante(
+        this.plantes.add(new Plante(
                 "Pothos",
                 TypePlante.INTERIEUR,
                 "Liane d'intérieur simple à cultiver...",
@@ -55,7 +57,7 @@ public class ControleCataloguePlantes {
 
         // reconstruit le FlowPane avec la liste des plantes
         this.listePlantes.getChildren().clear();
-        for (Plante plante : plantes) {
+        for (Plante plante : this.plantes) {
             this.listePlantes.getChildren().add(this.creerCartePlante(plante));
         }
     }
@@ -88,12 +90,14 @@ public class ControleCataloguePlantes {
      */
     private void ouvrirDetail(Plante plante) {
         try {
+            int index = this.plantes.indexOf(plante);
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/plante.fxml"));
             Parent detailRoot = loader.load();
 
             // Injecte la plante dans le controller détail
-            ControlePlante ctrl = loader.getController();
-            ctrl.setPlante(plante);
+            ControlePlante controle = loader.getController();
+            controle.setCatalogue(this.plantes, index);
 
             // Remplace la vue actuelle
             racine.getScene().setRoot(detailRoot);
