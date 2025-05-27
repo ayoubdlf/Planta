@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.input.MouseEvent;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 
 public class ControleCataloguePlantes {
 
+    @FXML public TextField recherche;
     @FXML private VBox     racine;
     @FXML private FlowPane listePlantes;
 
@@ -28,38 +30,28 @@ public class ControleCataloguePlantes {
         this.plantes = new ArrayList<>();
 
         // Plantes par default
-        this.plantes.add(new Plante(
-                "Lys de la Paix",
-                TypePlante.EXTERIEUR,
-                "Une plante élégante, facile à entretenir...",
-                120,
-                new int[]{18, 25},
-                false,
-                "Amérique",
-                new int[]{50, 70},
-                20.0,
-                true,
-                "https://images.unsplash.com/photo-1616694547693-b0f829a6cf30"
-        ));
-        this.plantes.add(new Plante(
-                "Pothos",
-                TypePlante.INTERIEUR,
-                "Liane d'intérieur simple à cultiver...",
-                100,
-                new int[]{16, 28},
-                true,
-                "Asie",
-                new int[]{60, 80},
-                15.0,
-                false,
-                "https://images.unsplash.com/photo-1658309833602-854ab8e1d9f5"
-        ));
+        this.plantes.add(new Plante("Lys de la Paix", TypePlante.EXTERIEUR, "Une plante élégante, facile à entretenir...", 120, new int[]{18, 25}, false, "Amérique", new int[]{50, 70}, 20.0, true, "/images/p1.jpeg"));
+        this.plantes.add(new Plante("Pothos", TypePlante.INTERIEUR, "Liane d'intérieur simple à cultiver...", 100, new int[]{16, 28}, true, "Asie", new int[]{60, 80}, 15.0, false, "/images/p2.jpeg"));
 
         // reconstruit le FlowPane avec la liste des plantes
-        this.listePlantes.getChildren().clear();
-        for (Plante plante : this.plantes) {
-            this.listePlantes.getChildren().add(this.creerCartePlante(plante));
-        }
+        this.afficherPlantes(this.plantes);
+
+
+        // Filtrage des plantes par leur nom
+        this.recherche.setOnKeyReleased(event -> {
+            String nom = this.recherche.getText().trim().toLowerCase();
+            if (nom.isEmpty()) {
+                afficherPlantes(plantes);
+            } else {
+                ArrayList<Plante> filtres = new ArrayList<>();
+                for (Plante plante : plantes) {
+                    if (plante.getNom().toLowerCase().contains(nom)) {
+                        filtres.add(plante);
+                    }
+                }
+                this.afficherPlantes(filtres);
+            }
+        });
     }
 
     /**
@@ -81,6 +73,13 @@ public class ControleCataloguePlantes {
         } catch (IOException e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    private void afficherPlantes(ArrayList<Plante> plantes) {
+        this.listePlantes.getChildren().clear();
+        for (Plante plante : plantes) {
+            this.listePlantes.getChildren().add(this.creerCartePlante(plante));
         }
     }
 

@@ -20,10 +20,12 @@ public class ControlePlanteCarte {
         this.nom.setText(plante.getNom());
         this.type.setText(plante.getType().name().toLowerCase());
         this.prix.setText(String.format("%.2f €", plante.getPrix()));
-        this.image.setImage(new Image(plante.getImage(), 144, 128, false, true));
-        Rectangle clip = new Rectangle(144, 128);
-        clip.setArcWidth(24);
-        clip.setArcHeight(24);
-        this.image.setClip(clip);
-    }
+
+        try {
+            this.image.setImage(new Image(plante.getImage(), 144, 128, false, true));
+            Rectangle clip = new Rectangle(144, 128);
+            clip.setArcWidth(24);
+            clip.setArcHeight(24);
+            this.image.setClip(clip);
+        } catch (Exception ignored) {}}
 }
