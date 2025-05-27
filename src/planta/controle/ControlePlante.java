@@ -5,6 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.shape.Rectangle;
 import planta.modele.Plante;
 import java.io.IOException;
 import java.util.List;
@@ -21,6 +24,7 @@ public class ControlePlante {
     @FXML private Label      toxique;
     @FXML private Label      origine;
     @FXML private Label      humidite;
+    @FXML private ImageView image;
     // TODO: @FXML private Label prix;
 
     private Plante       plante;
@@ -51,6 +55,15 @@ public class ControlePlante {
         this.toxique.setText(this.plante.estToxique() ? "Oui" : "Non");
         this.origine.setText(this.plante.getOrigine());
         this.humidite.setText(String.format("%d%% - %d%%", this.plante.getHumidite()[0], this.plante.getHumidite()[1]));
+
+        try {
+            this.image.setImage(new Image(plante.getImage(), 256, 256, false, true));
+            Rectangle clip = new Rectangle(256, 256);
+            clip.setArcWidth(12);
+            clip.setArcHeight(12);
+            this.image.setClip(clip);
+        } catch (Exception ignored) {}
+
     }
 
     @FXML private void onHome() throws IOException {

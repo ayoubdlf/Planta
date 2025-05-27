@@ -27,5 +27,6 @@ public class ControlePlanteCarte {
             clip.setArcWidth(24);
             clip.setArcHeight(24);
             this.image.setClip(clip);
-        } catch (Exception ignored) {}}
+        } catch (Exception ignored) {}
+    }
 }

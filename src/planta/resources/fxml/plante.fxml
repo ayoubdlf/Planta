@@ -53,9 +53,6 @@
             <VBox alignment="TOP_CENTER" fillWidth="false" style="-fx-spacing: 8;">
                <children>
                   <ImageView fx:id="image" fitHeight="256.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Downloads/2.jpeg" />
-                     </image>
                   </ImageView>
                   <Label fx:id="nom" text="Pothos" textFill="#111827">
                      <font>
