@@ -33,10 +33,11 @@ public class ControleCataloguePlantes {
                 120,
                 new int[]{18, 25},
                 false,
-                "Amérique du Sud",
+                "Amérique",
                 new int[]{50, 70},
                 20.0,
-                true
+                true,
+                "https://images.unsplash.com/photo-1616694547693-b0f829a6cf30"
         ));
         plantes.add(new Plante(
                 "Pothos",
@@ -45,10 +46,11 @@ public class ControleCataloguePlantes {
                 100,
                 new int[]{16, 28},
                 true,
-                "Asie du Sud-Est",
+                "Asie",
                 new int[]{60, 80},
                 15.0,
-                false
+                false,
+                "https://images.unsplash.com/photo-1658309833602-854ab8e1d9f5"
         ));
 
         // reconstruit le FlowPane avec la liste des plantes

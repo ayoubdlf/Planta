@@ -1,0 +1,20 @@
+.recherche {
+  -fx-background-color: white;
+  -fx-border-color: #E5E7EB;
+  -fx-background-radius: 8;
+  -fx-border-radius: 8;
+  -fx-padding: 0 8;
+}
+
+.toggle-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-padding: 4 8;
+    -fx-text-fill: #111827;
+}
+
+.toggle-button:hover, .toggle-button:selected {
+    -fx-background-color: white;
+}

@@ -14,15 +14,17 @@ public class Plante {
     private int[]      humidite;    // [min, max]
     private double     prix;
     private boolean    populaire;
+    private String     image;
 
 
-    public Plante(String nom, TypePlante type, String description, double eau, int[] temperature, boolean toxique, String origine, int[] humidite, double prix, boolean populaire) {
+    public Plante(String nom, TypePlante type, String description, double eau, int[] temperature, boolean toxique, String origine, int[] humidite, double prix, boolean populaire, String image) {
         assert nom != null && !nom.isEmpty()                  : "Le nom de la plante ne doit pas etre vide";
         assert type != null                                   : "Le type de plante ne peut pas etre nul";
         assert description != null                            : "La description ne peut pas etre nulle";
         assert eau >= 0                                       : "La quantité d'eau doit etre supérieur ou égale a 0";
         assert origine != null && !origine.isEmpty()          : "L'origine ne doit pas etre vide";
-        assert prix >= 0                                       : "Le prix doit etre supérieur ou égale a 0.00";
+        assert prix >= 0                                      : "Le prix doit etre supérieur ou égale a 0.00";
+        assert image != null && !image.isEmpty()              : "L'image de la plante ne doit pas etre vide";
 
         assert temperature != null && temperature.length == 2 : "La température doit contenir exactement deux valeurs : min et max";
         assert humidite    != null && humidite.length    == 2 : "L'humidité doit contenir exactement deux valeurs : min et max";
@@ -42,6 +44,7 @@ public class Plante {
         this.humidite    = humidite;
         this.prix        = prix;
         this.populaire   = populaire;
+        this.image       = image;
     }
 
     /* ——————————  GETTERS  —————————— */
@@ -84,6 +87,10 @@ public class Plante {
 
     public boolean estPopulaire() {
         return this.populaire;
+    }
+
+    public String getImage() {
+        return this.image;
     }
 
     @Override
