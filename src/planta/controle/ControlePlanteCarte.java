@@ -14,7 +14,6 @@ public class ControlePlanteCarte {
     @FXML private Label type;
     @FXML private Label prix;
     @FXML private ImageView image;
-    // TODO: @FXML private Label populaire;
 
     public void setPlante(Plante plante) {
         this.nom.setText(plante.getNom());

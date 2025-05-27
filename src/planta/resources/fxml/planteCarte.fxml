@@ -8,11 +8,11 @@
 
 
 <VBox fx:controller="planta.controle.ControlePlanteCarte" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: F9FAFB; -fx-padding: 16; -fx-background-radius: 12; -fx-border-radius: 12; -fx-spacing: 8;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
+
       <ImageView fx:id="image" fitHeight="128.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
       </ImageView>
       <VBox>
-         <children>
+
             <Label fx:id="nom" textFill="#262626">
                <font>
                   <Font name="Inter Regular" size="14.0" />
@@ -23,14 +23,14 @@
                   <Font name="Inter Regular" size="14.0" />
                </font>
             </Label>
-         </children>
+
       </VBox>
       <Label fx:id="prix" textFill="#6b7280">
          <font>
             <Font name="Inter Regular" size="14.0" />
          </font>
       </Label>
-   </children>
+
    <cursor>
       <Cursor fx:constant="HAND" />
    </cursor>

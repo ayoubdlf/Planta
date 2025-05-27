@@ -6,9 +6,9 @@
 <?import javafx.scene.text.*?>
 
 <VBox fx:id="racine" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="926.0" prefWidth="428.0" style="-fx-background-color: white; -fx-padding: 16; -fx-spacing: 16;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="planta.controle.ControleCataloguePlantes">
-   <children>
+
       <VBox alignment="CENTER_LEFT" style="-fx-background-color: white;">
-         <children>
+
             <Label text="Bonjour">
                <font>
                   <Font name="Inter Regular" size="20.0" />
@@ -19,7 +19,7 @@
                   <Font size="12.0" />
                </font>
             </Label>
-         </children>
+
       </VBox>
       <TextField fx:id="recherche" promptText="Rechercher" styleClass="recherche" minHeight="32.0" maxHeight="32.0" prefHeight="32.0">
          <font>
@@ -30,21 +30,20 @@
          </cursor>
       </TextField>
       <HBox alignment="CENTER" minHeight="32.0" style="-fx-spacing: 2; -fx-padding: 3; -fx-background-color: F3F4F6; -fx-background-radius: 8; -fx-border-radius: 8;">
-         <children>
-            <ToggleButton maxWidth="1.7976931348623157E308" layoutX="258.0" layoutY="12.0" mnemonicParsing="false" prefHeight="28.0" text="Tout"      textAlignment="CENTER" HBox.hgrow="ALWAYS"  />
-            <ToggleButton maxWidth="1.7976931348623157E308" layoutX="258.0" layoutY="12.0" mnemonicParsing="false" prefHeight="28.0" text="Populaire" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
-            <ToggleButton maxWidth="1.7976931348623157E308" layoutX="258.0" layoutY="12.0" mnemonicParsing="false" prefHeight="28.0" text="Extérieur" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
-            <ToggleButton maxWidth="1.7976931348623157E308" layoutX="261.0" layoutY="12.0" mnemonicParsing="false" prefHeight="28.0" text="Intérieur" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
-         </children>
+
+            <ToggleButton fx:id="filtrerParTout"      maxWidth="1.7976931348623157E308" layoutX="258.0" layoutY="12.0" mnemonicParsing="false" prefHeight="28.0" text="Tout"      textAlignment="CENTER" HBox.hgrow="ALWAYS"  />
+            <ToggleButton fx:id="filtrerParExterieur" maxWidth="1.7976931348623157E308" layoutX="258.0" layoutY="12.0" mnemonicParsing="false" prefHeight="28.0" text="Extérieur" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+            <ToggleButton fx:id="filtrerParInterieur" maxWidth="1.7976931348623157E308" layoutX="261.0" layoutY="12.0" mnemonicParsing="false" prefHeight="28.0" text="Intérieur" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </HBox>
       <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: white;" VBox.vgrow="NEVER">
-         <content>
+
             <FlowPane fx:id="listePlantes" columnHalignment="CENTER" style="-fx-background-color: white; -fx-hgap: 16; -fx-vgap: 16;">
             </FlowPane>
-         </content>
+
       </ScrollPane>
-   </children>
+
 </VBox>

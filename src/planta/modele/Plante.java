@@ -13,11 +13,10 @@ public class Plante {
     private int[]      temperature; // [min, max]
     private int[]      humidite;    // [min, max]
     private double     prix;
-    private boolean    populaire;
     private String     image;
 
 
-    public Plante(String nom, TypePlante type, String description, double eau, int[] temperature, boolean toxique, String origine, int[] humidite, double prix, boolean populaire, String image) {
+    public Plante(String nom, TypePlante type, String description, double eau, int[] temperature, boolean toxique, String origine, int[] humidite, double prix, String image) {
         assert nom != null && !nom.isEmpty()                  : "Le nom de la plante ne doit pas etre vide";
         assert type != null                                   : "Le type de plante ne peut pas etre nul";
         assert description != null                            : "La description ne peut pas etre nulle";
@@ -43,7 +42,6 @@ public class Plante {
         this.origine     = origine;
         this.humidite    = humidite;
         this.prix        = prix;
-        this.populaire   = populaire;
         this.image       = image;
     }
 
@@ -85,16 +83,12 @@ public class Plante {
         return this.prix;
     }
 
-    public boolean estPopulaire() {
-        return this.populaire;
-    }
-
     public String getImage() {
         return this.image;
     }
 
     @Override
     public String toString() {
-        return String.format("%s %s", this.getNom(), (this.estPopulaire() ? " ★" : ""));
+        return this.getNom();
     }
 }

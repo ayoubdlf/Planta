@@ -25,7 +25,6 @@ public class ControlePlante {
     @FXML private Label      origine;
     @FXML private Label      humidite;
     @FXML private ImageView image;
-    // TODO: @FXML private Label prix;
 
     private Plante       plante;
     private List<Plante> catalogue;
