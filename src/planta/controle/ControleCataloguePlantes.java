@@ -1,5 +1,7 @@
 package planta.controle;
 
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -143,5 +145,15 @@ public class ControleCataloguePlantes {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void onFermer() {
+        Platform.exit();
+    }
+
+    @FXML
+    public void onAjouter() {
+       // TODO
     }
 }

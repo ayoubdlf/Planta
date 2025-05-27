@@ -58,12 +58,12 @@
             <items>
                   <MenuItem mnemonicParsing="false" text="Charger" />
                   <MenuItem mnemonicParsing="false" text="Sauvegarder" />
-              <MenuItem mnemonicParsing="false" text="Fermer" />
+              <MenuItem mnemonicParsing="false" text="Fermer" onAction="#onFermer"  />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edition">
             <items>
-              <MenuItem mnemonicParsing="false" text="Ajouter" />
+              <MenuItem mnemonicParsing="false" text="Ajouter" onAction="#onAjouter"  />
             </items>
           </Menu>
         </menus>

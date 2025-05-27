@@ -179,12 +179,12 @@
         <menus>
           <Menu mnemonicParsing="false" text="Fichier">
             <items>
-              <MenuItem mnemonicParsing="false" text="Fermer" />
+              <MenuItem mnemonicParsing="false" text="Fermer" onAction="#onFermer" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edition">
             <items>
-                  <MenuItem mnemonicParsing="false" text="Editer" />
+                  <MenuItem mnemonicParsing="false" text="Editer" onAction="#onEditer" />
               <MenuItem mnemonicParsing="false" text="Supprimer" />
             </items>
           </Menu>
