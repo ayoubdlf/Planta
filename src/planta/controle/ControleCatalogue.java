@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.FileChooser;
+import planta.exceptions.PlantaException;
 import planta.modele.Catalogue;
 import planta.modele.Plante;
 import planta.modele.TypePlante;
@@ -133,13 +134,7 @@ public class ControleCatalogue {
                 Catalogue.setPlantesDepuisJSON(plantes);
                 this.afficherPlantes(Catalogue.getPlantes());
             } catch (Exception e) {
-                Platform.runLater(() -> {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Erreur de chargement");
-                    alert.setHeaderText("Impossible de charger le fichier JSON");
-                    alert.setContentText(e.getMessage());
-                    alert.showAndWait();
-                });
+                PlantaException.alert("Erreur de chargement", e.getMessage());
             }
         }
     }
@@ -155,13 +150,7 @@ public class ControleCatalogue {
             try {
                 Files.writeString(file.toPath(), Catalogue.toJSON());
             } catch (IOException e) {
-                Platform.runLater(() -> {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Erreur de sauvegarde");
-                    alert.setHeaderText("Impossible de sauvegarder le fichier JSON");
-                    alert.setContentText(e.getMessage());
-                    alert.showAndWait();
-                });
+                PlantaException.alert("Erreur de sauvegarder", e.getMessage());
             }
         }
     }
