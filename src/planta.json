@@ -1,0 +1,146 @@
+[
+    {
+        "nom": "Monstera Deliciosa",
+        "description": "Plante tropicale au feuillage spectaculaire, la Monstera Deliciosa est prisée pour ses grandes feuilles découpées. Adaptée aux intérieurs lumineux, elle apporte une touche exotique et purifie l’air ambiant.",
+        "image": "https://images.unsplash.com/photo-1614594975525-e45190c55d0b",
+        "origine": "Amérique Centrale",
+        "type": "INTERIEUR",
+        "prix": 34.9,
+        "eau": 600,
+        "temperature": [
+            18,
+            28
+        ],
+        "humidite": [
+            60,
+            80
+        ],
+        "estToxique": true
+    },
+    {
+        "nom": "Lavande",
+        "description": "Plante aromatique et ornementale, la lavande est réputée pour ses fleurs violettes et son parfum apaisant. Elle attire les pollinisateurs et résiste bien à la sécheresse.",
+        "image": "https://plus.unsplash.com/premium_photo-1688045685821-4958c1e28322",
+        "origine": "Méditerranée",
+        "type": "EXTERIEUR",
+        "prix": 15.0,
+        "eau": 300,
+        "temperature": [
+            10,
+            30
+        ],
+        "humidite": [
+            30,
+            50
+        ],
+        "estToxique": false
+    },
+    {
+        "nom": "Ficus Elastica",
+        "description": "Le Ficus Elastica, ou caoutchouc, est une plante d’intérieur robuste au feuillage épais et brillant. Elle est idéale pour les débutants et nécessite peu d'entretien.",
+        "image": "https://images.unsplash.com/photo-1597055181300-e3633a917c9c",
+        "origine": "Asie du Sud-Est",
+        "type": "INTERIEUR",
+        "prix": 25.0,
+        "eau": 500,
+        "temperature": [
+            16,
+            24
+        ],
+        "humidite": [
+            50,
+            70
+        ],
+        "estToxique": true
+    },
+    {
+        "nom": "Aloe Vera",
+        "description": "L’Aloe Vera est une plante médicinale facile à entretenir, parfaite pour les environnements secs. Son gel est utilisé pour ses propriétés apaisantes sur la peau.",
+        "image": "https://images.unsplash.com/photo-1613372978247-de50228e8033",
+        "origine": "Péninsule arabique",
+        "type": "INTERIEUR",
+        "prix": 19.0,
+        "eau": 250,
+        "temperature": [
+            18,
+            26
+        ],
+        "humidite": [
+            20,
+            50
+        ],
+        "estToxique": true
+    },
+    {
+        "nom": "Bambou",
+        "description": "Symbole de sérénité et de chance, le bambou est une plante d'extérieur vigoureuse qui pousse rapidement. Il est également utilisé comme brise-vue naturel.",
+        "image": "https://plus.unsplash.com/premium_photo-1694864661950-288ec8a06e5c",
+        "origine": "Asie",
+        "type": "EXTERIEUR",
+        "prix": 29.0,
+        "eau": 700,
+        "temperature": [
+            10,
+            35
+        ],
+        "humidite": [
+            40,
+            70
+        ],
+        "estToxique": false
+    },
+    {
+        "nom": "Sansevieria",
+        "description": "Surnommée ‘langue de belle-mère’, la Sansevieria est extrêmement résistante. Elle peut survivre à de faibles luminosités et irrégularités d’arrosage.",
+        "image": "https://images.unsplash.com/photo-1696508902069-c4bf13d19701",
+        "origine": "Afrique de l'Ouest",
+        "type": "INTERIEUR",
+        "prix": 22.5,
+        "eau": 300,
+        "temperature": [
+            15,
+            29
+        ],
+        "humidite": [
+            30,
+            60
+        ],
+        "estToxique": true
+    },
+    {
+        "nom": "Thym",
+        "description": "Le thym est une plante aromatique méditerranéenne idéale pour les jardins. Il est utilisé en cuisine comme en phytothérapie, et attire les abeilles.",
+        "image": "https://plus.unsplash.com/premium_photo-1726138617708-f3a7e667739f",
+        "origine": "Méditerranée",
+        "type": "EXTERIEUR",
+        "prix": 12.0,
+        "eau": 200,
+        "temperature": [
+            12,
+            32
+        ],
+        "humidite": [
+            20,
+            50
+        ],
+        "estToxique": false
+    },
+    {
+        "nom": "Calathea Orbifolia",
+        "description": "Avec ses grandes feuilles rondes zébrées, la Calathea Orbifolia est une plante d’intérieur appréciée pour son esthétique unique. Elle préfère une atmosphère humide et ombragée.",
+        "image": "https://images.unsplash.com/photo-1714507767656-2fb307e1b03d",
+        "origine": "Bolivie",
+        "type": "INTERIEUR",
+        "prix": 30.0,
+        "eau": 550,
+        "temperature": [
+            18,
+            27
+        ],
+        "humidite": [
+            60,
+            90
+        ],
+        "estToxique": false
+    }
+]

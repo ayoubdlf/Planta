@@ -4,11 +4,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import planta.modele.CacheImage;
 import planta.modele.Catalogue;
 import planta.modele.Plante;
 import planta.vue.Loader;
@@ -46,7 +46,8 @@ public class ControleCarte extends VBox {
         this.prix.setText(String.format("%.2f €", this.plante.getPrix()));
 
         try {
-            this.image.setImage(new Image(this.plante.getImage(), 144, 128, false, true));
+
+            this.image.setImage(CacheImage.get(plante.getImage(), 144, 128));
             Rectangle clip = new Rectangle(144, 128);
             clip.setArcWidth(24);
             clip.setArcHeight(24);

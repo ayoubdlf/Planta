@@ -4,10 +4,10 @@ import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import planta.modele.CacheImage;
 import planta.modele.Catalogue;
 import planta.modele.Plante;
 import planta.vue.Loader;
@@ -51,7 +51,7 @@ public class ControlePlante {
         this.humidite.setText(String.format("%d%% - %d%%", plante.getHumidite()[0], plante.getHumidite()[1]));
 
         try {
-            this.image.setImage(new Image(plante.getImage(), 256, 256, false, true));
+            this.image.setImage(CacheImage.get(plante.getImage(), 256, 256));
             Rectangle clip = new Rectangle(256, 256);
             clip.setArcWidth(12);
             clip.setArcHeight(12);

@@ -9,7 +9,8 @@ import java.util.List;
 
 public class Catalogue {
 
-    private static ObservableList<Plante> plantes = getDonneesFictives();
+    // private static ObservableList<Plante> plantes = getDonneesFictives();
+    private static ObservableList<Plante> plantes = FXCollections.observableArrayList();
 
     public static ObservableList<Plante> getPlantes() {
         return plantes;

@@ -1,31 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<fx:root
-        xmlns="http://javafx.com/javafx/23.0.1"
-        xmlns:fx="http://javafx.com/fxml/1"
-        type="VBox"
-        style="-fx-background-color: #F9FAFB; -fx-padding: 16; -fx-background-radius: 12; -fx-border-radius: 12; -fx-spacing: 8;"
-        maxWidth="-Infinity" maxHeight="-Infinity" minWidth="-Infinity" minHeight="-Infinity"
-        stylesheets="/css/styles.css"
->
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-    <ImageView fx:id="image" fitHeight="128.0" fitWidth="144.0"
-               pickOnBounds="true" preserveRatio="true"/>
+<fx:root style="-fx-background-color: #F9FAFB; -fx-padding: 16; -fx-background-radius: 12; -fx-border-radius: 12; -fx-spacing: 8;" stylesheets="/css/styles.css" type="VBox" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+
+    <ImageView fx:id="image" fitHeight="128.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true" />
     <VBox>
-        <Label fx:id="nom" textFill="#262626">
-            <font><Font name="Inter Regular" size="14.0"/></font>
-        </Label>
-        <Label fx:id="type" textFill="#6b7280">
-            <font><Font name="Inter Regular" size="14.0"/></font>
-        </Label>
+        <Label fx:id="nom" textFill="#262626" />
+        <Label fx:id="type" textFill="#6b7280" />
     </VBox>
-    <Label fx:id="prix" textFill="#6b7280">
-        <font><Font name="Inter Regular" size="14.0"/></font>
-    </Label>
-    <cursor><Cursor fx:constant="HAND"/></cursor>
+    <Label fx:id="prix" textFill="#6b7280" />
+    <cursor><Cursor fx:constant="HAND" /></cursor>
 </fx:root>

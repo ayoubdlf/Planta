@@ -1,3 +1,95 @@
+@font-face {
+    font-family: 'Geist Regular';
+    src: url('geist/Geist-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Geist Bold';
+    src: url('geist/Geist-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Geist Medium';
+    src: url('geist/Geist-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Geist SemiBold';
+    src: url('geist/Geist-SemiBold.otf') format('opentype');
+}
+
+
+
+.root {
+    gray-100: #f3f4f6;
+    gray-200: #e5e7eb;
+    gray-300: #d1d5db;
+
+    green-50: #f0fdf4;
+    green-100: #dcfce7;
+    green-200: #b9f8cf;
+    green-300: #7bf1a8;
+    green-400: #05df72;
+    green-500: #00c950;
+    green-600: #00a63e;
+    green-700: #008236;
+    green-800: #016630;
+    green-900: #0d542b;
+    green-950: #032e15;
+
+    red-50: #fef2f2;
+    red-100: #ffe2e2;
+    red-200: #ffc9c9;
+    red-300: #ffa2a2;
+    red-400: #ff6467;
+    red-500: #fb2c36;
+    red-600: #e7000b;
+    red-700: #c10007;
+    red-800: #9f0712;
+    red-900: #82181a;
+    red-950: #460809;
+
+    indigo-50: #eef2ff;
+    indigo-100: #e0e7ff;
+    indigo-200: #c6d2ff;
+    indigo-300: #a3b3ff;
+    indigo-400: #7c86ff;
+    indigo-500: #615fff;
+    indigo-600: #4f39f6;
+    indigo-700: #432dd7;
+    indigo-800: #372aac;
+    indigo-900: #312c85;
+    indigo-950: #1e1a4d;
+
+    emerald-50 : #ecfdf5;
+    emerald-100: #d0fae5;
+    emerald-200: #a4f4cf;
+    emerald-300: #5ee9b5;
+    emerald-400: #00d492;
+    emerald-500: #00bc7d;
+    emerald-600: #009966;
+    emerald-700: #007a55;
+    emerald-800: #006045;
+    emerald-900: #004f3b;
+    emerald-950: #002c22;
+
+    black-50: #fafafa;
+    black-100: #f5f5f5;
+    black-200: #e5e5e5;
+    black-300: #d4d4d4;
+    black-400: #a1a1a1;
+    black-500: #737373;
+    black-600: #525252;
+    black-700: #404040;
+    black-800: #262626;
+    black-900: #171717;
+    black-950: #0a0a0a;
+}
+
+* {
+    -fx-font-family: 'Geist Regular';
+}
+
 .recherche {
   -fx-background-color: white;
   -fx-border-color: #E5E7EB;
@@ -20,6 +112,39 @@
 }
 
 
+
+/* VUE-MENU */
+.menu-bar {
+    -fx-background-color: gray-100;
+    -fx-border-color: transparent transparent gray-200 transparent;
+    -fx-padding: 0 0;
+    -fx-border-width: 0 0 1 0;
+}
+
+.menu-bar > .container > .menu-button {
+    -fx-padding: 4 8;
+}
+
+.menu-bar > .container > .menu-button > .label {
+    -fx-text-fill: black;
+}
+
+.menu-bar > .container > .menu-button:hover, .menu-bar > .container > .menu-button:focused, .menu-bar > .container > .menu-button:showing {
+    -fx-background-color: gray-200;
+}
+
+.menu-item {
+    -fx-padding: 4 8;
+}
+
+.menu-item:focused {
+    -fx-background-color: gray-200;
+}
+
+.menu-item:focused > .label {
+    -fx-text-fill: black;
+}
+
 /* VUE-ALERT */
 
 .alert-error {
@@ -30,13 +155,13 @@
 .alert-error-titre {
     -fx-font-family: 'Geist Medium';
     -fx-font-size: 16;
-    -fx-text-fill: red;
+    -fx-text-fill: red-600;
 }
 
 .alert-error-message {
     -fx-font-family: 'Geist Regular';
     -fx-font-size: 14;
-    /*-fx-text-fill: red;*/
+    /*-fx-text-fill: red-500;*/
     -fx-padding: 10 0 0 0;
 }
 
@@ -53,7 +178,7 @@
     -fx-padding: 4 8;
 
     -fx-background-color: white;
-    -fx-border-color: gray;
+    -fx-border-color: gray-200;
     -fx-border-width: 1px;
 
     -fx-background-radius: 6;
@@ -63,5 +188,5 @@
 }
 
 .alert-error .button:hover {
-    -fx-background-color: gray;
+    -fx-background-color: gray-100;
 }
