@@ -1,15 +1,32 @@
 package planta.modele;
 
+import com.google.gson.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Catalogue {
 
-    private static final ObservableList<Plante> plantes = getDonneesFictives();
+    private static ObservableList<Plante> plantes = getDonneesFictives();
 
     public static ObservableList<Plante> getPlantes() {
         return plantes;
+    }
+
+    public static void ajouterPlante(Plante plante) {
+        plantes.add(plante);
+    }
+
+    public static void setPlantesDepuisJSON(ArrayList<Plante> listePlantes) {
+        plantes.clear();
+        plantes.addAll(listePlantes);
+    }
+
+    public static String toJSON() {
+        List<Plante> plantes = Catalogue.getPlantes();
+        return new Gson().toJson(plantes);
     }
 
     private static ObservableList<Plante> getDonneesFictives() {

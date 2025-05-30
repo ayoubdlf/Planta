@@ -1,14 +1,20 @@
 package planta.controle;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.layout.FlowPane;
+import javafx.stage.FileChooser;
 import planta.modele.Catalogue;
 import planta.modele.Plante;
 import planta.modele.TypePlante;
+import planta.vue.DialoguePlante;
+import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -98,8 +104,65 @@ public class ControleCatalogue {
         });
     }
 
-
-
     @FXML
     public void onQuitter() { Platform.exit(); }
+
+    @FXML
+    public void onAjouter() {
+        DialoguePlante.afficher(
+                this.recherche.getScene().getWindow(),
+                null // on ajoutter une nouvelle plante
+        );
+
+        this.afficherPlantes(Catalogue.getPlantes());
+    }
+
+    @FXML
+    public void onCharger() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Charger un fichier JSON");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichier JSON", "*.json"));
+        File file = fileChooser.showOpenDialog(this.listePlantes.getScene().getWindow());
+
+        if (file != null) {
+            try {
+                String json               = Files.readString(file.toPath());
+                Type type                 = new TypeToken<List<Plante>>(){}.getType();
+                ArrayList<Plante> plantes = new Gson().fromJson(json, type);
+
+                Catalogue.setPlantesDepuisJSON(plantes);
+                this.afficherPlantes(Catalogue.getPlantes());
+            } catch (Exception e) {
+                Platform.runLater(() -> {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Erreur de chargement");
+                    alert.setHeaderText("Impossible de charger le fichier JSON");
+                    alert.setContentText(e.getMessage());
+                    alert.showAndWait();
+                });
+            }
+        }
+    }
+
+    @FXML
+    public void onSauvegarder() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Sauvegarder un fichier JSON");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers JSON", "*.json"));
+        File file = fileChooser.showSaveDialog(this.listePlantes.getScene().getWindow());
+
+        if (file != null) {
+            try {
+                Files.writeString(file.toPath(), Catalogue.toJSON());
+            } catch (IOException e) {
+                Platform.runLater(() -> {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Erreur de sauvegarde");
+                    alert.setHeaderText("Impossible de sauvegarder le fichier JSON");
+                    alert.setContentText(e.getMessage());
+                    alert.showAndWait();
+                });
+            }
+        }
+    }
 }

@@ -18,3 +18,50 @@
 .toggle-button:hover, .toggle-button:selected {
     -fx-background-color: white;
 }
+
+
+/* VUE-ALERT */
+
+.alert-error {
+    -fx-spacing: 10;
+    -fx-padding: 4 8;
+}
+
+.alert-error-titre {
+    -fx-font-family: 'Geist Medium';
+    -fx-font-size: 16;
+    -fx-text-fill: red;
+}
+
+.alert-error-message {
+    -fx-font-family: 'Geist Regular';
+    -fx-font-size: 14;
+    /*-fx-text-fill: red;*/
+    -fx-padding: 10 0 0 0;
+}
+
+.alert-error {
+    -fx-background-color: white;
+}
+
+.alert-error .button {
+    -fx-font-family: 'Geist Bold';
+    -fx-font-size: 14;
+    -fx-text-fill: black;
+
+    -fx-alignment: center;
+    -fx-padding: 4 8;
+
+    -fx-background-color: white;
+    -fx-border-color: gray;
+    -fx-border-width: 1px;
+
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+
+    -fx-cursor: hand;
+}
+
+.alert-error .button:hover {
+    -fx-background-color: gray;
+}

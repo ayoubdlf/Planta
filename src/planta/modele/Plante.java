@@ -1,5 +1,7 @@
 package planta.modele;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
 
 public class Plante {
 
