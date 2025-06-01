@@ -1,0 +1,90 @@
+@startuml
+
+package planta {
+
+    package modele {
+        class Catalogue {
+            ObservableList<Plante getPlantes()
+            void ajouterPlante(Plante plante)
+            void setPlantesDepuisJSON(ArrayList<Plante listePlantes)
+            String toJSON()
+        }
+
+        class Plante {
+            Plante()
+            String getNom()
+            TypePlante getType()
+            double getPrix()
+            String getDescription()
+            String getImage()
+            int getEau()
+            int[] getTemperature()
+            int[] getHumidite()
+            boolean getEstToxique()
+            String getOrigine()
+            void setNom(String nom)
+            void setType(TypePlante type)
+            void setPrix(double prix)
+            void setDescription(String desc)
+            void setImage(String url)
+            void setEau(int eau)
+            void setTemperature(int[] temperature)
+            void setHumidite(int[] humidite)
+            void setEstToxique(boolean estToxique)
+            void setOrigine(String origine)
+            String toString()
+        }
+
+        enum TypePlante {
+            INTERIEUR
+            EXTERIEUR
+        }
+    }
+
+    package controle {
+        class ControleCatalogue {
+            ControleCatalogue()
+            void onQuitter()
+            void onAjouter()
+            void onCharger()
+            void onSauvegarder()
+        }
+
+        class ControlePlante {
+            void init(int index)
+            void onEditer()
+        }
+
+        class ControleCarte {
+            ControleCarte(Plante plante)
+        }
+    }
+
+    package vue {
+        class DialoguePlante {
+            void afficher(Window owner, Plante plante)
+        }
+
+        class Loader {
+            Scene afficherCatalogue()
+            Scene afficherDetail(int index)
+        }
+    }
+
+    class Main {
+        void start(Stage stage)
+        void main(String[] args)
+    }
+}
+
+Catalogue         -- "*" Plante
+Plante            -- "1" TypePlante
+ControleCatalogue -- "1" Catalogue
+ControleCatalogue -- "*" ControleCarte
+ControlePlante    -- "1" Plante
+ControlePlante    -- "1" Catalogue
+ControleCarte     -- "1" Plante
+Loader            -- "1" ControlePlante
+Main              -- "1" Loader
+
+@enduml
