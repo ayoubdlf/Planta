@@ -33,9 +33,7 @@ public class ControleCarte extends VBox {
             loader.setController(this);
 
             loader.load();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        } catch (Exception ignored) {}
     }
 
     @FXML

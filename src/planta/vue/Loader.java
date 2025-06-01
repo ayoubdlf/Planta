@@ -13,7 +13,6 @@ public class Loader {
             FXMLLoader loader = new FXMLLoader(Loader.class.getResource("/fxml/catalogue.fxml"));
             return new Scene(loader.load());
         } catch (Exception e) {
-            e.printStackTrace();
             return null;
         }
     }
@@ -28,7 +27,6 @@ public class Loader {
 
             return new Scene(parent);
         } catch (Exception e) {
-            e.printStackTrace();
             return null;
         }
     }

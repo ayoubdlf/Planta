@@ -108,6 +108,7 @@ public class DialoguePlante {
             Double.parseDouble(prix.getText());
         } catch (Exception ex) {
             PlantaException.alert(estModification ? "Erreur de modification" : "Erreur d'ajout", "Le prix doit être un nombre valide 💰");
+            return false;
         }
 
         return true;
