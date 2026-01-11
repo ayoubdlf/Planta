@@ -5,7 +5,6 @@ A modern JavaFX application for managing your personal plant collection with an 
 <div align="center">
   <img src="screenshots/screenshot1.png" alt="Planta Screenshot" height="300">
   <img src="screenshots/screenshot2.png" alt="Planta Screenshot" height="300">
-  <img src="screenshots/screenshot3.png" alt="Planta Screenshot" height="300">
 </div>
 
 ## Overview
