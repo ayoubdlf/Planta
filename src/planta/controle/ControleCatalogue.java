@@ -36,6 +36,26 @@ public class ControleCatalogue {
         this.listePlantes = new FlowPane();
     }
 
+    private void loadDefaultData() {
+        // Ne charger que si le catalogue est vide
+        if (Catalogue.getPlantes().isEmpty()) {
+            try {
+                // Lire le fichier planta.json depuis les ressources
+                var inputStream = getClass().getResourceAsStream("/planta.json");
+                if (inputStream != null) {
+                    String json = new String(inputStream.readAllBytes());
+                    Type type = new TypeToken<List<Plante>>(){}.getType();
+                    ArrayList<Plante> plantes = new Gson().fromJson(json, type);
+                    
+                    Catalogue.setPlantesDepuisJSON(plantes);
+                }
+            } catch (Exception e) {
+                // Si le chargement échoue, le catalogue reste vide
+                System.err.println("Impossible de charger planta.json: " + e.getMessage());
+            }
+        }
+    }
+
     private void afficherPlantes(List<Plante> plantes) {
         this.listePlantes.getChildren().clear();
         for (Plante plante : plantes) {
@@ -46,6 +66,9 @@ public class ControleCatalogue {
 
     @FXML
     private void initialize() {
+        // Charger les données par défaut depuis planta.json
+        loadDefaultData();
+        
         this.afficherPlantes(Catalogue.getPlantes());
 
         // Le bouton "Tout" des tri est selectionne par default
